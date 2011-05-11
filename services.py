@@ -26,8 +26,8 @@ class ManagementService(gdata.service.GDataService):
             **kwargs)
 
     def GetGoalsList(self, *args, **kwrags):
-        resonse = self.Get(self.GoalsUri(*args, **kwrags))
-        return atom.core.parse(resonse.ToString(), gdata.analytics.data.ManagementFeed)
+        response = self.Get(self.GoalsUri(*args, **kwrags))
+        return atom.core.parse(response.ToString(), gdata.analytics.data.ManagementFeed)
 
     def GoalsUri(self, *args, **kwrags):
         return str(gdata.analytics.client.GoalQuery(*args, **kwrags))
